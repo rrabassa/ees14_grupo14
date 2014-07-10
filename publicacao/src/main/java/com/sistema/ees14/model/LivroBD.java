@@ -65,16 +65,6 @@ public Livro livro=new Livro();
 		return livro;
 	}
 	
-	public void main (String args[]){
-		LivroBD lBD = new LivroBD();
-		Livro livro = new Livro();
-		livro.setNome("nome");
-		livro.setAutor("autor");
-		livro.setAno("ano");
-		lBD.salvarBD(livro);
-		
-	}
-
 	public void updateBD(Livro x) {
 		Session sessao = null;
 		Transaction transac = null;

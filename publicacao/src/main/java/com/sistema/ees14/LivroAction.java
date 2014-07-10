@@ -3,6 +3,7 @@ package com.sistema.ees14;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import com.sistema.ees14.model.Autor;
 import com.sistema.ees14.model.Livro;
 import com.sistema.ees14.model.LivroBD;
 
@@ -16,7 +17,7 @@ public class LivroAction {
 	public String nomeLivro;
 	public String nomeAlteraLivro;
 	public String anoLivro;
-	public String autorLivro;
+	public Autor autorLivro;
 	public int idLivro;
 	public String reservado;
 	public int retornoReserva;
@@ -112,11 +113,12 @@ public class LivroAction {
 	public void setAnoLivro(String anoLivro) {
 		this.anoLivro = anoLivro;
 	}
-	public String getAutorLivro() {
+	
+	public Autor getAutorLivro() {
 		return autorLivro;
 	}
 
-	public void setAutorLivro(String autorLivro) {
+	public void setAutorLivro(Autor autorLivro) {
 		this.autorLivro = autorLivro;
 	}
 
