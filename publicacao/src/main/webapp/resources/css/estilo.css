@@ -1,0 +1,77 @@
+#div{
+	
+	font:14px verdana negrito;
+	align:right;
+	position: float;
+	height: 300px;
+	margin-left:450px;
+	margin-top:200px;	
+	width: 450px;
+	border-width:8px;
+	border:solid 2px;
+	text-align:center;
+  
+}
+
+#divMenu{
+	
+	font:14px verdana negrito;
+	align:right;
+	position: float;
+	height: 300px;
+	margin-left:450px;
+	margin-top:200px;	
+	width: 450px;
+	border-width:8px;
+	border:solid 2px;
+	text-align:left;
+  
+}
+#divLink{
+	
+	font:12px verdana negrito;
+	align:right;
+	position: float;
+	height: 200px;
+	margin-left:450px;
+	margin-top:10px;	
+	width: 450px;
+	border-width:8px;
+	
+	text-align:center;
+  
+}
+
+.botao{
+	font:13px verdana;
+	position: absolute; 
+	right:500px;
+
+}
+
+.botaoConsulta{
+	font:13px verdana;
+	position: absolute; 
+	right:500px;
+	margin-top:200px;
+}
+
+.botaoAlterar{
+	font:13px verdana;
+	position: absolute; 
+	right:500px;
+	margin-top:46px;
+	margin-right: 100px;
+}
+
+.cls1{
+	 width:300px;
+	 margin-bottom:5px;
+	 padding:6px;
+	 border-width:8px;
+}
+
+.descricao{
+	margin-right:6px;
+	
+}
