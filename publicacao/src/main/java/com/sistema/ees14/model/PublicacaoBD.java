@@ -2,7 +2,6 @@ package com.sistema.ees14.model;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.persistence.Id;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -12,22 +11,18 @@ import org.hibernate.Transaction;
 import com.sistema.ees14.utils.HibernateUtil;
 
 
-@ManagedBean(name="LivroBD")
+@ManagedBean(name="PublicacaoBD")
 @RequestScoped
-public class LivroBD {
-@Id
-public Livro livro=new Livro();
-	public Livro l;
-	public void salvarBD (Livro livro){
+public class PublicacaoBD {
+
+	public Publicacao publicacao;
+	public void salvarBD (Publicacao publicacao){
 		Session sessao = null;
 		Transaction transac = null;
 		try{
-			//System.out.println(livro);
 			sessao = HibernateUtil.buildSessionFactory();//.openSession();
-			//System.out.println("conectado2...");
 			transac = sessao.beginTransaction();
-			//System.out.println(transac);
-			sessao.save(livro);
+			sessao.save(publicacao);
 			transac.commit();
 			
 		}catch (HibernateException e){
@@ -42,7 +37,7 @@ public Livro livro=new Livro();
 		}
 	}
 	
-	public Livro consultaBD(String nome){
+	public Publicacao consultaBD(String nome){
 		Session sessao = null;
 		Transaction transac = null;
 
@@ -53,7 +48,7 @@ public Livro livro=new Livro();
 			String queryString = "from Livro where nome = :nome";
 			Query query = sessao.createQuery(queryString);
 			query.setString("nome", nome); 
-			livro=(Livro) query.uniqueResult();
+			publicacao=(Publicacao) query.uniqueResult();
 
 			
 		} catch (RuntimeException e) {
@@ -62,25 +57,25 @@ public Livro livro=new Livro();
             sessao.flush();
             sessao.close();
         }
-		return livro;
+		return publicacao;
 	}
 	
-	public void updateBD(Livro x) {
+	public void updateBD(Publicacao publicacao) {
 		Session sessao = null;
 		Transaction transac = null;
 		sessao = HibernateUtil.buildSessionFactory();
-		l = (Livro)sessao.get(Livro.class,x.getId());
+		publicacao = (Publicacao)sessao.get(Publicacao.class, publicacao.getId());
 		
-		l.setNome(x.getNome());
-		l.setAno(x.getAno());
-		l.setAutor(x.getAutor());
-		l.setReserva(x.getReserva());
+		publicacao.setTitulo(publicacao.getTitulo());
+		publicacao.setAno(publicacao.getAno());
+		publicacao.setAutor(publicacao.getAutor());
+		publicacao.setResumo(publicacao.getResumo());
 				
 		try{
 
 			transac = sessao.beginTransaction();
 
-			sessao.update(l);
+			sessao.update(publicacao);
 
 		
 			
